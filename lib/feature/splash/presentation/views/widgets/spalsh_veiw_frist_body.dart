@@ -14,10 +14,7 @@ class SpalshVeiwFristBody extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 18),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: const customAppBar(),
-          ),
+          const customAppBar(),
 
           const Customimageview(),
           Spacer(),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:ui_shop/core/utils/App_router.dart';
 
 class customAppBar extends StatelessWidget {
   const customAppBar({super.key});
@@ -33,7 +35,9 @@ class customAppBar extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kLoginPage);
+            },
             child: Text('Skip', style: TextStyle(color: Colors.black)),
           ),
         ],

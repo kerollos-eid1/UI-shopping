@@ -6,8 +6,10 @@ class SplashVeiwFrist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SpalshVeiwFristBody(),
+    return SafeArea(
+      child: Scaffold(
+        body: SpalshVeiwFristBody(),
+      ),
     );
   }
 }
