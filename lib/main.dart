@@ -14,7 +14,6 @@ class ShoppingApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
     );
   }
 }
