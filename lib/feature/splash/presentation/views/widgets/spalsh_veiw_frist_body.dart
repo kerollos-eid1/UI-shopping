@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:ui_shop/feature/splash/presentation/views/screens/last_splash_view.dart';
+
 import 'package:ui_shop/feature/splash/presentation/views/widgets/On_Boarding_Footer.dart';
 
 import 'package:ui_shop/feature/splash/presentation/views/widgets/custom_app_Bar.dart';
