@@ -12,6 +12,7 @@ class ShoppingApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      color: Color(0xffF5F5F5),
       routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
     );

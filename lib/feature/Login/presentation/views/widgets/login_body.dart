@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:ui_shop/core/utils/asset_photo.dart';
-import 'package:ui_shop/core/utils/style.dart';
+import 'package:go_router/go_router.dart';
+import 'package:ui_shop/core/utils/App_router.dart';
+import 'package:ui_shop/feature/Login/presentation/view_model/custom_text.dart';
+import 'package:ui_shop/feature/Login/presentation/view_model/custom_text_feild.dart';
 import 'package:ui_shop/feature/Login/presentation/views/widgets/custom_contanier.dart';
-import 'package:ui_shop/feature/Login/presentation/views/widgets/custom_text_feild.dart';
 
-class LoginBody extends StatelessWidget {
+// ignore: must_be_immutable
+class LoginBody extends StatefulWidget {
   const LoginBody({super.key});
+
+  @override
+  State<LoginBody> createState() => _LoginBodyState();
+}
+
+class _LoginBodyState extends State<LoginBody> {
+  bool _obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +25,30 @@ class LoginBody extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 50),
-            child: Text('Welcome\n Back!', style: Styles.textStyles36),
+            child: CustomText(text: 'Welcome\n Back!'),
           ),
-          const CustomTextFeild(),
+          CustomTextFeild(
+            hintText: 'Username or password',
+            prefixIcon: Icons.person,
+          ),
+          CustomTextFeild(
+            hintText: 'Password',
+            prefixIcon: Icons.lock,
+            isPassword: true,
+            obscureText: _obscurePassword,
+            onSuffixTap: () {
+              setState(() {
+                _obscurePassword = !_obscurePassword;
+              });
+            },
+          ),
           Row(
             children: [
               Spacer(),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.kForgetPassword);
+                },
                 child: Text(
                   'Forget Password?',
                   style: TextStyle(color: Colors.redAccent, fontSize: 12),
@@ -34,38 +59,28 @@ class LoginBody extends StatelessWidget {
 
           const SizedBox(height: 50),
           CustomContainer(),
-          iconcontact(),
+          ContactMe(),
         ],
       ),
     );
   }
 }
 
-class iconcontact extends StatelessWidget {
-  const iconcontact({super.key});
+class ContactMe extends StatelessWidget {
+  const ContactMe({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Image.asset(AssetPhoto.GoodleSignIn)],
+        Text(
+          '- OR Continue with -',
+          style: TextStyle(
+            fontSize: 12,
+            color: const Color.fromARGB(255, 119, 112, 112),
+          ),
         ),
-
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Create An Acount\t'),
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                'Sign in',
-                style: TextStyle(color: Color(0xffF83758), fontSize: 18),
-              ),
-            ),
-          ],
-        ),
+        
       ],
     );
   }
