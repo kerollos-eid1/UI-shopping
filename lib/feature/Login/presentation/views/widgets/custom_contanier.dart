@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key, });
-
+  const CustomContainer({super.key, required this.text, });
+final String text;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -15,7 +15,7 @@ class CustomContainer extends StatelessWidget {
           child: TextButton(
             onPressed: () {},
             child: Text(
-              'Login',
+              text,
               style: TextStyle(fontSize: 20, color: Colors.white),
             ),
           ),

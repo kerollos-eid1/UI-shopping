@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ui_shop/core/utils/App_router.dart';
+import 'package:ui_shop/core/utils/style.dart';
 import 'package:ui_shop/feature/Login/presentation/view_model/custom_text.dart';
 import 'package:ui_shop/feature/Login/presentation/view_model/custom_text_feild.dart';
+import 'package:ui_shop/feature/Login/presentation/views/widgets/contact_me.dart';
 import 'package:ui_shop/feature/Login/presentation/views/widgets/custom_contanier.dart';
 
 // ignore: must_be_immutable
@@ -25,7 +27,11 @@ class _LoginBodyState extends State<LoginBody> {
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 50),
-            child: CustomText(text: 'Welcome\n Back!'),
+            child: CustomText(
+              text: 'Welcome\n Back!',
+              fontSize: 36,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           CustomTextFeild(
             hintText: 'Username or password',
@@ -43,6 +49,7 @@ class _LoginBodyState extends State<LoginBody> {
             },
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Spacer(),
               TextButton(
@@ -58,30 +65,32 @@ class _LoginBodyState extends State<LoginBody> {
           ),
 
           const SizedBox(height: 50),
-          CustomContainer(),
+          CustomContainer(text: 'Login'),
           ContactMe(),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomText(
+                text: 'Create An Account',
+                fontSize: 12,
+                fontWeight: FontWeight.normal,
+              ),
+              TextButton(
+                onPressed: () {
+                  GoRouter.of(context).push(AppRouter.kSignup);
+                },
+                child: Text(
+                  'Sign Up',
+                  style: Styles.textStyles12.copyWith(
+                    color: const Color.fromARGB(255, 230, 95, 85),
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ],
       ),
-    );
-  }
-}
-
-class ContactMe extends StatelessWidget {
-  const ContactMe({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          '- OR Continue with -',
-          style: TextStyle(
-            fontSize: 12,
-            color: const Color.fromARGB(255, 119, 112, 112),
-          ),
-        ),
-        
-      ],
     );
   }
 }
