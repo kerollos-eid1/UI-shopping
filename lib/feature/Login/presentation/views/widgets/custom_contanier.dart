@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
-  const CustomContainer({super.key, required this.text, });
-final String text;
+  const CustomContainer({
+    super.key,
+    required this.text,
+    required this.onPressed,
+  });
+  final String text;
+  final VoidCallback onPressed;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -13,7 +18,7 @@ final String text;
           height: 55,
           color: Color(0xffF83758),
           child: TextButton(
-            onPressed: () {},
+            onPressed: onPressed,
             child: Text(
               text,
               style: TextStyle(fontSize: 20, color: Colors.white),

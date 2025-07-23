@@ -1,7 +1,9 @@
+// ignore: file_names
 import 'package:go_router/go_router.dart';
 import 'package:ui_shop/feature/Login/presentation/views/forget_pass.dart';
 import 'package:ui_shop/feature/Login/presentation/views/login.dart';
 import 'package:ui_shop/feature/Login/presentation/views/sign_up.dart';
+import 'package:ui_shop/feature/home/presentation/views/Home_page.dart';
 
 import 'package:ui_shop/feature/splash/presentation/views/Splash_View.dart';
 
@@ -12,6 +14,7 @@ abstract class AppRouter {
   static const kLoginPage = '/LoginPage';
   static const kSignup='/SignUp';
   static const kForgetPassword='/FprgetPassword';
+  static const kHomePage='/HomePage';
   static final router = GoRouter(
     initialLocation: '/',
     routes: [
@@ -31,6 +34,10 @@ abstract class AppRouter {
        GoRoute(
         path: kForgetPassword, 
       builder: (context, state) => ForgetPassword(),
+      ),
+         GoRoute(
+        path: kHomePage, 
+      builder: (context, state) => HomePage(),
       ),
     ],
   );

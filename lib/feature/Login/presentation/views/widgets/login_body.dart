@@ -65,7 +65,12 @@ class _LoginBodyState extends State<LoginBody> {
           ),
 
           const SizedBox(height: 50),
-          CustomContainer(text: 'Login'),
+          CustomContainer(
+            text: 'Login',
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kHomePage);
+            },
+          ),
           ContactMe(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

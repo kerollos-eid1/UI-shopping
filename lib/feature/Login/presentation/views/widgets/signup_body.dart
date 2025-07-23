@@ -6,6 +6,7 @@ import 'package:ui_shop/feature/Login/presentation/view_model/custom_text.dart';
 import 'package:ui_shop/feature/Login/presentation/view_model/custom_text_feild.dart';
 import 'package:ui_shop/feature/Login/presentation/views/widgets/contact_me.dart';
 import 'package:ui_shop/feature/Login/presentation/views/widgets/custom_contanier.dart';
+
 class SignupBody extends StatefulWidget {
   const SignupBody({super.key});
 
@@ -61,7 +62,12 @@ class _SignupBodyState extends State<SignupBody> {
             'By clicking the Register button, you agree to\n the public offer',
             style: TextStyle(color: Colors.grey),
           ),
-          const CustomContainer(text: 'Create Account'),
+          CustomContainer(
+            text: 'Create Account',
+            onPressed: () {
+              GoRouter.of(context).push(AppRouter.kHomePage);
+            },
+          ),
           ContactMe(),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

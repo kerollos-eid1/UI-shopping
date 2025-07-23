@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:ui_shop/core/utils/App_router.dart';
 import 'package:ui_shop/feature/Login/presentation/view_model/custom_text.dart';
 import 'package:ui_shop/feature/Login/presentation/view_model/custom_text_feild.dart';
 import 'package:ui_shop/feature/Login/presentation/views/widgets/custom_contanier.dart';
@@ -29,7 +31,9 @@ class ForgetPasswordBody extends StatelessWidget {
             '* We will send you a message to set or reset\n your new password',
             style: TextStyle(color: Colors.grey),
           ),
-          CustomContainer(text: 'Submit'),
+          CustomContainer(text: 'Submit', onPressed: () {  
+            GoRouter.of(context).push(AppRouter.kLoginPage);
+          },),
         ],
       ),
     );
