@@ -18,4 +18,8 @@ abstract class Styles {
     fontSize: 12,
     fontWeight: FontWeight.w300,
   );
+  static const textStyles18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w600,
+  );
 }
