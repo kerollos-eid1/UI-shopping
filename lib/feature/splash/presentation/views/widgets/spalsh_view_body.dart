@@ -7,16 +7,20 @@ class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
 
   @override
-  State<SplashViewBody> createState() => _SplashViewBodyState();
+  State<SplashViewBody> createState() =>
+      _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> {
+class _SplashViewBodyState
+    extends State<SplashViewBody> {
   @override
   @override
   void initState() {
     super.initState();
     Future.delayed(Duration(seconds: 3), () {
-      GoRouter.of(context).go(AppRouter.kSplashVeiwFrist);
+      GoRouter.of(
+        context,
+      ).go(AppRouter.kSplashVeiwFrist);
     });
   }
 
@@ -24,7 +28,8 @@ class _SplashViewBodyState extends State<SplashViewBody> {
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+      crossAxisAlignment:
+          CrossAxisAlignment.stretch,
       children: [Image.asset(AssetPhoto.logo)],
     );
   }

@@ -18,7 +18,7 @@ class SortFilter extends StatelessWidget {
             onPressed: () {},
             style: TextButton.styleFrom(
               padding: EdgeInsets.symmetric(horizontal: 12),
-              backgroundColor: const Color.fromARGB(255, 235, 228, 228),
+              backgroundColor: Colors.white,
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,
@@ -37,7 +37,7 @@ class SortFilter extends StatelessWidget {
             onPressed: () {},
             style: TextButton.styleFrom(
               padding: EdgeInsets.symmetric(horizontal: 12),
-              backgroundColor: const Color.fromARGB(255, 235, 228, 228),
+              backgroundColor: Colors.white,
             ),
             child: Row(
               mainAxisSize: MainAxisSize.min,

@@ -20,14 +20,23 @@ class OnboardingFooter extends StatelessWidget {
         // المؤشر الدائري (Dots)
         const Spacer(),
         Row(
-          children: List.generate(totalPages, (index) {
-            return  Container(
-              margin: const EdgeInsets.symmetric(horizontal: 4),
-              width: index == currentPage ? 20 : 10,
+          children: List.generate(totalPages, (
+            index,
+          ) {
+            return Container(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 4,
+              ),
+              width: index == currentPage
+                  ? 20
+                  : 10,
               height: 10,
               decoration: BoxDecoration(
-                color: index == currentPage ? Colors.black87 : Colors.grey[300],
-                borderRadius: BorderRadius.circular(20),
+                color: index == currentPage
+                    ? Colors.black87
+                    : Colors.grey[300],
+                borderRadius:
+                    BorderRadius.circular(20),
               ),
             );
           }),

@@ -1,3 +1,4 @@
 import 'package:flutter/cupertino.dart';
 
-const KprimaryBackgroundColor=Color(0xffF5F5F5);
+// ignore: constant_identifier_names
+const KprimaryBackgroundColor = Color.fromARGB(255, 239, 233, 233);

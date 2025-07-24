@@ -10,7 +10,8 @@ class customAppBar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(left: 10),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment:
+            MainAxisAlignment.spaceBetween,
         children: [
           RichText(
             text: TextSpan(
@@ -36,9 +37,17 @@ class customAppBar extends StatelessWidget {
           ),
           TextButton(
             onPressed: () {
-              GoRouter.of(context).push(AppRouter.kLoginPage);
+              GoRouter.of(
+                context,
+              ).push(AppRouter.kLoginPage);
             },
-            child: Text('Skip', style: TextStyle(color: Colors.black)),
+            child: Text(
+              'Skip',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
         ],
       ),
