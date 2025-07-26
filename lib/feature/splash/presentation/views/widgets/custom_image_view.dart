@@ -33,7 +33,7 @@ class Customimageview extends StatelessWidget {
             'Amet minim mollit non deserunt ullamco\n est sit aliqua dolor do amet sint. Velit\n officia consequat duis enim velit mollit.',
             style: Styles.textStyles14.copyWith(
               color: Color(0xffA8A8A9),
-            ),
+            )
           ),
         ],
       ),
