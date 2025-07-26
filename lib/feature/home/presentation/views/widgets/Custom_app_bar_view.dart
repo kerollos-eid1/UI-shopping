@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:ui_shop/core/utils/asset_photo.dart';
 
@@ -17,11 +16,22 @@ class CustomAppBarView extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(onPressed: onPressed, icon: Icon(Icons.sort, weight: 32)),
-          SizedBox(width: 111, height: 37, child: Image.asset(AssetPhoto.logo)),
+          IconButton(
+            onPressed: onPressed,
+            icon: Icon(Icons.sort, weight: 32),
+          ),
+          SizedBox(
+            width: 111,
+            height: 37,
+            child: Image.asset(AssetPhoto.logo),
+          ),
           GestureDetector(
             onTap: onTap,
-            child: Image.asset(AssetPhoto.profile, width: 40, height: 40),
+            child: SizedBox(
+              width: 30,
+              height: 30,
+              child: Image.asset(AssetPhoto.profile),
+            ),
           ),
         ],
       ),
